@@ -18,22 +18,24 @@ def arithmetic_arranger(problems, *decision):
             arranged_problems[countProblems * 0 + i] = "{0:>{1}}".format(problems[i][0], problems[i][3]+2)+"    "
             arranged_problems[countProblems * 1 + i] = problems[i][1] + "{0:>{1}}".format(problems[i][2], problems[i][3] + 1) + "    "
             arranged_problems[countProblems * 2 + i] = "-"*(problems[i][3]+2)+"    "
-            if (problems[i][1] == "+"):
-                arranged_problems[countProblems * 3 + i] = "{0:>{1}}".format(str(int(problems[i][0]) + int(problems[i][2])),
+            if (decision):
+                if (problems[i][1] == "+"):
+                    arranged_problems[countProblems * 3 + i] = "{0:>{1}}".format(str(int(problems[i][0]) + int(problems[i][2])),
                                                                              problems[i][3]+2)+"    "
-            else:
-                arranged_problems[countProblems * 3 + i] = "{0:>{1}}".format(str(int(problems[i][0]) - int(problems[i][2])),
+                else:
+                    arranged_problems[countProblems * 3 + i] = "{0:>{1}}".format(str(int(problems[i][0]) - int(problems[i][2])),
                                                                              problems[i][3] + 2) + "    "
         else:
             arranged_problems[countProblems * 0 + i] = "{0:>{1}}".format(problems[i][0], problems[i][3] + 2) +"\n"
             arranged_problems[countProblems * 1 + i] = problems[i][1] + "{0:>{1}}".format(problems[i][2],
                                                                                           problems[i][3] + 1) + "\n"
             arranged_problems[countProblems * 2 + i] = "-" * (problems[i][3] + 2)  +"\n"
-            if (problems[i][1] == "+"):
-                arranged_problems[countProblems * 3 + i] = "{0:>{1}}".format(int(problems[i][0]) + int(problems[i][2]),
+            if (decision):
+                if (problems[i][1] == "+"):
+                    arranged_problems[countProblems * 3 + i] = "{0:>{1}}".format(int(problems[i][0]) + int(problems[i][2]),
                                                                          problems[i][3] + 2) + "\n"
-            else:
-                arranged_problems[countProblems * 3 + i] = "{0:>{1}}".format(int(problems[i][0]) - int(problems[i][2]),
+                else:
+                    arranged_problems[countProblems * 3 + i] = "{0:>{1}}".format(int(problems[i][0]) - int(problems[i][2]),
                                                                              problems[i][3] + 2) + "\n"
 
     return "".join(arranged_problems)
